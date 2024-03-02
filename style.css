@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 60px;
+}
+.logo{
+    font-size: 30px;
+}
+.menu{
+    display: flex;
+    list-style: none;
+
+}
+.menu a{
+    text-decoration: none;
+    padding: 20px 30px;
+    display: block;
+    font-size: 20px;
+    color: white;
+    transition: all .7s ease;
+    border-radius: 10px;
+}
+.menu a:hover{
+    background-color: aquamarine;
+    color: black;
+    /* box-shadow: 0 0 20px rgb(2, 238, 160); */
+}
+span{
+    color: aquamarine;
+}
+.parent{
+    width: 900px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: aqua;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.child{
+    height: 100px;
+    width: 900px;
+    border-radius: 100px;
+    background-color: blue;
+    position: absolute;
+
+    animation-name: child;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes child{
+    from{
+        margin-left: -900px;
+    }to{
+        margin-left: -200px;
+        background-color: green;
+    }
+    
+}
+
+
+.parent_box{
+    height: 600px;
+    width: 600px;
+    background-color: aliceblue;
+    position: relative;
+}
+
+
+.box{
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+    position: absolute;
+
+    animation-name: box;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.41,1.17,.84,.28);
+    /* animation-delay: 2s; */
+    /* animation-fill-mode: forwards; */
+}
+
+@keyframes box{
+    0%{
+        left: 0;
+        background-color: rgb(255, 68, 0);
+    }
+    25%{
+        top: 0;
+        left: 400px;
+        background-color: rgb(47, 0, 255);
+        rotate: 180deg;
+    }
+    50%{
+        top: 400px;
+        left: 400px;
+        rotate: 180deg;
+        background-color: green;
+    }
+    75%{
+        top: 400px;
+        left: 0;
+        rotate: 180deg;
+        background-color: red;
+    }
+    100%{
+        top: 0;
+        right: 400px;
+        /* rotate: 180deg; */
+    }
+     
+}
+
+
+h2{
+    animation-name: text;
+    animation-duration: 2s;
+}
+
+@keyframes text{
+    0%{
+        margin-left: 0;
+        color: green;
+    }
+    100%{
+        margin-left: 100%;
+        color: red;
+    }
+}
